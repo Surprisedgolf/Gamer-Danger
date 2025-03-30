@@ -147,7 +147,7 @@ header {
     
 }
 
-.texto-caja {
+.texto-caja-inicio {
     display: flex;
     flex-direction: column;
     gap: 10px; 
@@ -157,7 +157,7 @@ header {
 
 
 
-.texto-caja h1 {
+.texto-caja-inicio h1 {
     font-size: 4rem !important;
     font-weight: bold;
     text-align: left; 
@@ -166,7 +166,7 @@ header {
     
 }
 
-.texto-caja p {
+.texto-caja-inicio p {
     font-size: 1.1rem;
     margin-top: 10px;
     font-family: "Rubik", sans-serif;
