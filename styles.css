@@ -153,6 +153,7 @@ header {
     gap: 10px; 
     max-width: 600px;
     height: auto;
+    z-index: 1000;
 }
 
 
