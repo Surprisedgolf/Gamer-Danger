@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página con Carrusel y Juego DOOM</title>
+      <style type="text/css">
+         .dosbox-container { width: 320px; height: 200px; }
+          .dosbox-container > .dosbox-overlay { background: url(https://js-dos.com/cdn/DOOM.png); }
+       </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Mi Página de Videojuegos</h1>
+  </header>
+
+
+
+
+  <div id="dosbox"></div>
+
+  <script>
+
+    window.addEventListener("scroll", function () {
+      let header = document.querySelector("header");
+      if (window.scrollY > 50) {
+        header.classList.add("header-fijo");
+      } else {
+        header.classList.remove("header-fijo");
+      }
+    });
+
+    // Carrusel de plataformas
+    const circle = document.getElementById("circle");
+    const logo = document.getElementById("logo");
+
+    const platforms = [
+      { src: "imagenes/xbox-logo-negro.png", color: "#107C10" },
+      { src: "imagenes/playstation-png-logo.png", color: "#003791" },
+      { src: "imagenes/nintendo.png", color: "#E60012" },
+      { src: "imagenes/steam.png", color: "#171A21" }
+    ];
+
+    let index = 0;
+    let interval = setInterval(changePlatform, 5000);
+
+    function changePlatform() {
+      logo.style.opacity = "0";
+      setTimeout(() => {
+        index = (index + 1) % platforms.length;
+        logo.src = platforms[index].src;
+        circle.style.background = platforms[index].color;
+        logo.style.opacity = "1";
+      }, 800);
+    }
+
+    // Pausar y reanudar el carrusel al pasar el mouse
+    circle.addEventListener("mouseover", () => {
+      clearInterval(interval);
+      logo.style.animationPlayState = "paused";
+    });
+
+    circle.addEventListener("mouseleave", () => {
+      logo.style.animationPlayState = "running";
+      interval = setInterval(changePlatform, 5000);
+    });
+
+
+    var dosbox = new Dosbox({
+      id: "dosbox",
+      onload: function (dosbox) {
+        dosbox.run("upload/DOOM-@evilution.zip", "./doom");
+        // Inicia el carrusel después de que DOOM cargue
+        setTimeout(function () {
+          interval = setInterval(changePlatform, 5000);
+        }, 2000); // Espera 2 segundos
+      },
+      onrun: function (dosbox, app) {
+        console.log("App '" + app + "' is runned");
+      }
+    });
+  </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/js-dos@0.5.3/js-dos.min.js"></script>
+</body>
+</html>
