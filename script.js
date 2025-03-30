@@ -1,4 +1,5 @@
 
+//Menu header posicionado
 window.addEventListener("scroll", function () {
     let header = document.querySelector("header");
     if (window.scrollY > 50) {
@@ -13,7 +14,7 @@ window.addEventListener("scroll", function () {
     }
 });
 
-
+//logos giratorios 
 const circle = document.getElementById("circle");
 const logo = document.getElementById("logo");
 
@@ -51,6 +52,8 @@ circle.addEventListener("mouseleave", () => {
     interval = setInterval(changePlatform, 5000);
 });
 
+
+//Seccion de doom 
 document.addEventListener("DOMContentLoaded", async () => {
     const dosbox = document.getElementById("dosbox");
     if (!dosbox) {
@@ -60,9 +63,21 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     try {
         const dos = await Dos(dosbox).run("doom/doom.jsdos", {
-            useTouch: true // Activa los controles táctiles
+            useTouch: true
         });
     } catch (error) {
         console.error("Error al ejecutar js-dos:", error);
     }
+});
+
+//botones seccion doom
+
+document.getElementById('btn-installation').addEventListener('click', function() {
+    const card = document.getElementById('card-installation');
+    card.style.display = card.style.display === 'block' ? 'none' : 'block';
+});
+
+document.getElementById('btn-controls').addEventListener('click', function() {
+    const card = document.getElementById('card-controls');
+    card.style.display = card.style.display === 'block' ? 'none' : 'block';
 });

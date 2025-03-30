@@ -133,7 +133,7 @@ header {
     grid-area: hero;
     background: 
         linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 20%),
-        url('https://raw.githubusercontent.com/Surprisedgolf/Gamer-Danger/main/imagenes/1949885.jpg') no-repeat center/cover;    height: 100vh;
+        url('imagenes/1949885.jpg') no-repeat center/cover;    height: 100vh;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -194,57 +194,91 @@ header {
     width: 100%;
     position: absolute;
     bottom: 20px;
-    white-space: nowrap;
+    display: flex;
     justify-content: center;
-    margin: 10px 0px;
-   
+    margin: 10px 0;
 }
 
 .deslizador-padre:before {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 250px;
     height: 100%;
     background: #0D0D0D;
-    content: ("");
 }
 
-.empresas-logos {
-    display: inline-block;
-    margin: 0 10px;
-    animation: 10s slide infinite linear;
-    
+.deslizador-padre {
+    overflow: hidden;
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
 }
+
+.deslizador-padre:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: #0D0D0D;
+}
+
+
+.empresas-logos {
+    display: flex;
+    margin: 0 10px;
+    animation: slide 15s infinite linear; 
+    flex-wrap: nowrap;
+    width: fit-content;  
+}
+
+
 .empresas-logos img {
-    height: 27px;
+    height: 30px;
     filter: grayscale(100%);
     opacity: 0.8;
     transition: opacity 0.3s ease;
-    gap: 10px;
-    margin: 0 20px;
-    white-space: nowrap;
-    overflow: hidden;
-
+    margin: 0 15px;
 }
 
-.deslizador-padre:hover .empresas-logos{
+
+.deslizador-padre:hover .empresas-logos {
     animation-play-state: paused;
 }
 
 .empresas-logos img:hover {
     opacity: 1;
     filter: grayscale(50%);
-    
 }
 
 
-.empresas-logos img:nth-child(1) {
-    transform: scale(1.5);
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
-.empresas-logos img:nth-child(3) {
-    transform: scale(1.4);
+
+/* Animación del deslizador */
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
+
+
+
 
 @keyframes slide {
     from {
@@ -273,6 +307,7 @@ header {
     padding-top: 80px;
     position: relative;
     background-color: white;
+    grid-area: top-juegos;
 }
 
 .caja1 { 
@@ -296,11 +331,32 @@ header {
     justify-content: center;
     align-items: center;
     border-radius: 32px;
-    
+    position: relative;
+    overflow: hidden;
 }
+
 .caja2 img {
     max-width: 100%;
     height: auto;
+}
+
+.texto-caja {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    color: white;
+    font-size: 1.2rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+}
+
+.caja2:hover .texto-caja {
+    opacity: 1;
 }
 
 .caja3 { 
@@ -310,10 +366,25 @@ header {
     justify-content: center;
     align-items: center;
     border-radius: 32px;
+    position: relative;
 }
+
 .caja3 img {
     max-width: 100%;
     height: auto;
+}
+
+.caja3 .texto-caja {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.caja3:hover .texto-caja {
+    opacity: 1;
 }
 
 .caja4 {
@@ -330,7 +401,6 @@ header {
     align-items: center;
     perspective: 1000px;
     transition: background 0.5s ease-in-out;
-    
 }
 
 #logo {
@@ -352,7 +422,6 @@ header {
     }
 }
 
-
 .caja4:hover { background: #00A4EF; }
 .caja4:hover img { content: url('imagenes/xbox.png'); }
 
@@ -363,11 +432,27 @@ header {
     justify-content: center;
     align-items: center;
     border-radius: 32px;
+    position: relative;
 }
+
 .caja5 img {
     max-width: 100%;
     height: auto;
 }
+
+.caja5 .texto-caja {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.caja5:hover .texto-caja {
+    opacity: 1;
+}
+
 .caja6 {
     grid-area: 3 / 1 / 4 / 2;
     background: #777;
@@ -375,7 +460,22 @@ header {
     justify-content: center;
     align-items: center;
     border-radius: 32px;
+    position: relative;
 }
+
+.caja6 .texto-caja {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.caja6:hover .texto-caja {
+    opacity: 1;
+}
+
 .caja7 { 
     grid-area: 3 / 4 / 5 / 5;
     background: #888;
@@ -383,6 +483,7 @@ header {
     justify-content: center;
     align-items: center;
     border-radius: 32px;
+    position: relative;
 }
 
 .caja8 { 
@@ -393,6 +494,7 @@ header {
     align-items: center;
     border-radius: 32px;
 }
+
 .caja9 { 
     grid-area: 3 / 2 / 5 / 3;
     background-image: url(imagenes/caja-izquierda.png);
@@ -403,13 +505,10 @@ header {
     justify-content: center;
     align-items: center;
     border-radius: 32px;
-
-
 }
 
 .caja10 { 
     grid-area: 3 / 3 / 5 / 4;
-    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -418,7 +517,6 @@ header {
     object-fit: cover;
     background-repeat: no-repeat;
     background-size: cover;
-    
 }
 
 
@@ -435,6 +533,7 @@ header {
     object-fit: cover;
     background-repeat: no-repeat;
     background-size: cover;
+    
     min-height: 100vh;
     justify-content: center;
     width: 100%;
@@ -580,18 +679,62 @@ header {
 /*reseñas*/
 
 /* Sección DOOM */
+
+/*caja general*/
 .productoras {
+    grid-area: productoras;
     width: 100%;
+    position: relative;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)),
+    linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)),
+     url('imagenes/doom1.webp') no-repeat center center;
+    background-size: 100% 100%;
+    background-position: center;
+    transition: background 0.5s ease-in-out; 
+    padding: 30px;
+    padding-top: 150px;
+    
+    
+}
+#dosbox {
+    width: 100%;
+    height: 400px;
     position: relative;
     background: url('imagenes/doom1.webp') no-repeat center top;
     background-size: cover;
-    background-position: center -300px;
-    /*background-attachment: fixed;*/
+    border-radius: 10px;
+    transition: background 0.5s ease-in-out;
 }
 
-/* Imagen de fondo con efecto difuminado */
+
+.productoras::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    z-index: 100;
+    border-radius: 10px 10px 0 0; 
+}
+
+#productoras::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
+    z-index: 100;
+    border-radius: 10px 10px 0 0;
+}
+
+
+/*imagen inicio*/
 .imagen-fondo-inicio {
-    /*background: url('imagenes/doom-fondo.webp') no-repeat center;*/
+    
     background-size: cover;
     height: 80vh;
     width: 100%;
@@ -602,12 +745,10 @@ header {
     position: relative;
 }
 
-/* Efecto de fusión con la sección anterior */
-.overlay {
+
+.texto-Doom-inicial {
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(17, 17, 17, 1), rgba(17, 17, 17, 0.2), rgba(17, 17, 17, 1));
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -615,37 +756,45 @@ header {
     padding: 20px;
 }
 
-.imagen-fondo-inicio h1 {
+.texto-Doom-inicial h1 {
     font-size: 3em;
     color: #e94560;
     text-shadow: 2px 2px 8px #000;
     font-family: "Bebas Neue", sans-serif;
 }
 
-.imagen-fondo-inicio p {
+.texto-Doom-inicial p {
     font-size: 1.4em;
 }
 
-/* Contenedor en dos columnas */
+/*contenedor principal seccion juego y formulario*/
+
 .doom-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 30px;
     padding: 50px 20px;
+
 }
 
-/* Formulario */
+/*Formulario*/
 .form-container {
     width: 40%;
     background: #222;
     padding: 30px;
     border-radius: 10px;
     text-align: left;
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(9px);
+    border: 1px solid rgba(54, 52, 52, 0.2); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .form-container h2 {
     color: #e94560;
+    font-family:"Bebas Neue", sans-serif;
+    font-size: 1.4rem;
 }
 
 form {
@@ -659,28 +808,87 @@ input, select, button {
     font-size: 1em;
     border: none;
     border-radius: 5px;
+    background-color: gray;
 }
 
-button {
+.boton-envio-formulario {
     background-color: #e94560;
     color: white;
     cursor: pointer;
 }
 
-button:hover {
+.boton-envio-formulario:hover {
     background-color: #ff4757;
 }
 
-/* Contenedor del juego */
+/*caja juego*/
+
 .doom-container {
     width: 55%;
-    background: #000;
-    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 0, 0, 0);
+    backdrop-filter: blur(9px);
+    border: 1px solid rgba(54, 52, 52, 0.2); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 17px;
     border-radius: 10px;
     text-align: center;
+    gap: 20px;  
 }
 
-/* Ajuste de tamaño del juego */
+.doom-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.contenedores-botones-doom {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px; 
+    justify-content: center; 
+    align-items: center; 
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.info-btn {
+    background-color: #e94560;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.info-btn:hover {
+    background-color: #d2364e;
+}
+
+.info-card {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    margin-top: 20px;
+    margin-left: 25px;
+}
+
+.info-card h3 {
+    margin-bottom: 10px;
+}
+
+.info-card a {
+    color: var(--color-secundario);
+}
+
 #dosbox {
     width: 100%;
     height: 400px;
@@ -688,8 +896,8 @@ button:hover {
     border-radius: 10px;
 }
 
-/* Responsivo */
-@media (max-width: 900px) {
+
+@media (max-width: 600px) {
     .doom-wrapper {
         flex-direction: column;
         align-items: center;
@@ -707,12 +915,14 @@ button:hover {
 
 footer {
     grid-area: footer;
-    background-color: var(--color-primario);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)) 0%,
+    var(--color-primario);
     display: flex;
     flex-direction: column; 
     align-items: center;
     padding: 20px;
-    justify-content: space-evenly; 
+    justify-content: space-evenly;
+     
 }
 
 
