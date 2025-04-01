@@ -312,18 +312,22 @@ header {
 
 .caja1 { 
     grid-area: 1 / 1 / 3 / 2; 
-    background: #222;
+    background-image: url(imagenes/amongus.png);
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top -150px;
     color: white;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     font-size: 1.5rem;
     border-radius: 32px;
 }
 
 .caja2 { 
     grid-area: 1 / 2 / 3 / 4;
-    background-image: url(imagenes/caja-superior.png);
+    background-image: url(imagenes/caja-superior-s.png);
     object-fit: cover;
     background-repeat: no-repeat;
     background-size: cover;
@@ -332,12 +336,16 @@ header {
     align-items: center;
     border-radius: 32px;
     position: relative;
-    overflow: hidden;
+
 }
 
 .caja2 img {
     max-width: 100%;
     height: auto;
+    display: flex;
+    align-items: center;
+    margin-bottom: 70px;
+    
 }
 
 .texto-caja {
@@ -355,13 +363,15 @@ header {
     text-align: center;
 }
 
-.caja2:hover .texto-caja {
-    opacity: 1;
-}
+
 
 .caja3 { 
-    grid-area: 1 / 4 / 2 / 5; 
-    background: #444;
+    grid-area: 1 / 4 / 3 / 5; 
+    background-image: url(imagenes/dead-space.webp);
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -425,37 +435,14 @@ header {
 .caja4:hover { background: #00A4EF; }
 .caja4:hover img { content: url('imagenes/xbox.png'); }
 
-.caja5 { 
-    grid-area: 2 / 4 / 3 / 5; 
-    background: #555;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 32px;
-    position: relative;
-}
-
-.caja5 img {
-    max-width: 100%;
-    height: auto;
-}
-
-.caja5 .texto-caja {
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    padding: 10px;
-    border-radius: 10px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.caja5:hover .texto-caja {
-    opacity: 1;
-}
 
 .caja6 {
-    grid-area: 3 / 1 / 4 / 2;
-    background: #777;
+    grid-area: 3 / 1 / 5 / 2;
+    background-image: url(imagenes/doom1.webp);
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top -60px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -478,22 +465,20 @@ header {
 
 .caja7 { 
     grid-area: 3 / 4 / 5 / 5;
-    background: #888;
     display: flex;
-    justify-content: center;
+    background-image: url(imagenes/halo-3.png);
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top -80px;
+    justify-content: start;
     align-items: center;
     border-radius: 32px;
     position: relative;
+    box-shadow:#000;
 }
 
-.caja8 { 
-    grid-area: 4 / 1 / 5 / 2;
-    background: #999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 32px;
-}
+
 
 .caja9 { 
     grid-area: 3 / 2 / 5 / 3;
