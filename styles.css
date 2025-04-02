@@ -71,7 +71,7 @@ header {
     transform: translateX(-50%); 
     width: 100%;
     border-radius: 0;
-    padding: 10px 20px;
+    padding: 10px 100px;
     background: rgba(13, 13, 13, 0.9);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transition: all 0.5s ease-in-out;
@@ -81,6 +81,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 30px;
     width: 100%;
     margin: 0 auto;
     position: relative;
@@ -120,7 +121,7 @@ header {
     margin-left: auto;
 }
 
-/* Estilos originales para botones del header */
+
 .boton {
     background: transparent;
     color: white;
@@ -137,7 +138,7 @@ header {
     color: black;
 }
 
-/* Estilos originales para botones de navegación */
+
 .nav-buttons-desktop {
     display: flex;
     gap: 10px;
@@ -165,8 +166,8 @@ header {
     transform: none;
 }
 
-/* Estilos para el resto de botones */
-.call-to-action, .btn-primary, .info-btn, .toggle-form-btn, .boton-envio-formulario {
+
+.call-to-action, .btn-primary,  .toggle-form-btn, .boton-envio-formulario {
     display: inline-block;
     padding: 12px 30px;
     background: linear-gradient(45deg, #ff0000, #ff6b6b);
@@ -401,8 +402,62 @@ header {
     padding: 60px;
     padding-top: 80px;
     position: relative;
-    background-color: white;
+    background: linear-gradient(to bottom, #0D0D0D, #1a1a1a);
     grid-area: top-juegos;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.caja1, .caja2, .caja3, .caja4, .caja6, .caja7, .caja9, .caja10 {
+    background: #0D0D0D;
+    border: 2px solid #ff0000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3),
+                0 0 20px rgba(255, 0, 0, 0.2),
+                0 0 30px rgba(255, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.caja1:hover, .caja2:hover, .caja3:hover, .caja4:hover, .caja6:hover, .caja7:hover, .caja9:hover, .caja10:hover {
+    border-color: #ff6b6b;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4),
+                0 0 30px rgba(255, 0, 0, 0.3),
+                0 0 45px rgba(255, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+/* Efectos específicos para cada caja */
+.caja1 {
+    border-color: #ff0000;
+}
+
+.caja2 {
+    border-color: #ff3333;
+}
+
+.caja3 {
+    border-color: #ff6666;
+}
+
+.caja4 {
+    border-color: #ff9999;
+}
+
+.caja6 {
+    border-color: #ffcccc;
+}
+
+.caja7 {
+    border-color: #ff0000;
+}
+
+.caja9 {
+    border-color: #ff3333;
+}
+
+.caja10 {
+    border-color: #ff6666;
 }
 
 .caja1 { 
@@ -422,7 +477,7 @@ header {
 
 .caja2 { 
     grid-area: 1 / 2 / 3 / 4;
-    background-image: url(imagenes/caja-superior-s.png);
+   /* background-image: url(imagenes/caja-superior-s.png);*/
     object-fit: cover;
     background-repeat: no-repeat;
     background-size: cover;
@@ -431,7 +486,16 @@ header {
     align-items: center;
     border-radius: 32px;
     position: relative;
-
+    clip-path: path(
+        "M 0,0 
+        H 300 
+        A 15 15 0 0 1 285 15 
+        V 135 
+        A 50 50 0 0 1 15 135 
+        V 15 
+        A 15 15 0 0 1 0 0 
+        Z"
+    );
 }
 
 .caja2 img {
@@ -440,7 +504,6 @@ header {
     display: flex;
     align-items: center;
     margin-bottom: 70px;
-    
 }
 
 .texto-caja {
@@ -490,7 +553,7 @@ header {
     opacity: 1;
 }
 
-.caja4 {
+#circle {
     width: 250px;
     height: 250px;
     border-radius: 50%;
@@ -504,6 +567,8 @@ header {
     align-items: center;
     perspective: 1000px;
     transition: background 0.5s ease-in-out;
+    z-index: 1000;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 #logo {
@@ -514,6 +579,7 @@ header {
     transform-style: preserve-3d;
     display: flex;
     align-items: center;
+    z-index: 1001;
 }
 
 @keyframes spin3D {
@@ -523,6 +589,16 @@ header {
     to {
         transform: rotateY(360deg);
     }
+}
+
+#circle:hover { 
+    background: #00A4EF; 
+    z-index: 1000;
+}
+
+#circle:hover img { 
+    content: url('imagenes/xbox.png');
+    z-index: 1001;
 }
 
 .caja4:hover { background: #00A4EF; }
@@ -601,7 +677,7 @@ header {
    =========================================== */
 .reselas {
     grid-area: reselas;
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 20%), linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 20%), 
+    background-image: linear-gradient(to bottom, rgb(0, 0, 0) 0%, rgba(255, 255, 255, 0) 20%), linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 20%), 
                       url(imagenes/pexels-cottonbro-7247508.jpg);
     object-fit: cover;
     background-repeat: no-repeat;
@@ -2238,6 +2314,30 @@ footer .social-media img {
         transform: translateY(-2px);
         box-shadow: 0 6px 20px rgba(255, 0, 0, 0.3);
         color: white;
+    }
+}
+
+@media (max-width: 768px) {
+    #circle {
+        width: 200px;
+        height: 200px;
+    }
+
+    #logo {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    #circle {
+        width: 150px;
+        height: 150px;
+    }
+
+    #logo {
+        width: 60px;
+        height: 60px;
     }
 }
 
