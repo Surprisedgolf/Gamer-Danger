@@ -1,4 +1,3 @@
-
 //Menu header posicionado
 window.addEventListener("scroll", function () {
     let header = document.querySelector("header");
@@ -80,4 +79,31 @@ document.getElementById('btn-installation').addEventListener('click', function()
 document.getElementById('btn-controls').addEventListener('click', function() {
     const card = document.getElementById('card-controls');
     card.style.display = card.style.display === 'block' ? 'none' : 'block';
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const menuBtn = document.getElementById('menuBtn');
+    const menuDesplegable = document.getElementById('menuDesplegable');
+    const redirecciones = document.querySelectorAll('.redirecciones a');
+
+    menuBtn.addEventListener('click', function() {
+        menuBtn.classList.toggle('active');
+        menuDesplegable.classList.toggle('active');
+    });
+
+    // Cerrar el menú al hacer clic en un enlace
+    redirecciones.forEach(link => {
+        link.addEventListener('click', function() {
+            menuBtn.classList.remove('active');
+            menuDesplegable.classList.remove('active');
+        });
+    });
+
+    // Cerrar el menú al hacer clic fuera de él
+    document.addEventListener('click', function(event) {
+        if (!menuBtn.contains(event.target) && !menuDesplegable.contains(event.target)) {
+            menuBtn.classList.remove('active');
+            menuDesplegable.classList.remove('active');
+        }
+    });
 });

@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -54,10 +53,6 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: all 0.5s ease-in-out;
     z-index: 1000;
-    position: absolute;
-    top: 0;
-    left: 50%;
-
 }
 
 .header-fijo {
@@ -547,8 +542,9 @@ header {
     text-align: center;
     transition: transform 0.3s ease, z-index 0.3s ease;
     overflow: hidden;
+    width: 90%;
+    margin: 10px auto;
     height: 450px;
-    margin: 15px;
     z-index: 0; 
 }
 
@@ -556,6 +552,7 @@ header {
     transform: scale(1.05);
     z-index: 10; 
 }
+
 .tarjeta-reseña img {
     width: 100%;
     height: 100%;
@@ -602,6 +599,8 @@ header {
 .tarjeta-reseña p {
     flex-grow: 1;
     padding: 15px;
+    font-size: 0.9rem;
+    line-height: 1.4;
 }
 
 .tarjeta-reseña button {
@@ -611,12 +610,80 @@ header {
     padding: 10px 15px;
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-bottom: 15px;
 }
+
 .tarjeta-reseña button:hover {
     background-color: #d03c51;
     transform: scale(1.05);
 }
 
+.carousel-inner {
+    padding: 20px 0;
+    margin: 0 80px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carousel-item {
+    padding: 0 15px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 45px;
+    height: 45px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.8;
+}
+
+.carousel-control-prev {
+    left: 15px;
+}
+
+.carousel-control-next {
+    right: 15px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: var(--color-primario);
+}
+
+@media (max-width: 768px) {
+    .carousel-inner {
+        margin: 0 40px;
+    }
+    
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .carousel-control-prev {
+        left: 5px;
+    }
+    
+    .carousel-control-next {
+        right: 5px;
+    }
+    
+    .tarjeta-reseña {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
 
 /* botones tarjetas bootstrap */
 .btn-primary {
@@ -967,6 +1034,351 @@ footer .social-media img {
     text-align: center;
     padding: 5px;
     width: 100%;
+}
+
+/* Media Queries para Responsive Design */
+@media (max-width: 600px) {
+    /* Header */
+    header {
+        width: 95%;
+        padding: 10px 15px;
+    }
+
+    .contenedor-header {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        margin-right: 0;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .menu-hamburguesa {
+        display: flex;
+    }
+
+    .menu-desplegable {
+        display: none;
+    }
+
+    .menu-desplegable.active {
+        display: block;
+    }
+
+    .redirecciones {
+        display: none;
+    }
+
+    .botones {
+        display: none;
+    }
+
+    /* Animación del menú hamburguesa */
+    .menu-hamburguesa.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .menu-hamburguesa.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-hamburguesa.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* Hero Section */
+    .seccion-inicio {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        padding-top: 150px;
+    }
+
+    .texto-caja-inicio h1 {
+        font-size: 2.5rem !important;
+        text-align: center;
+    }
+
+    .texto-caja-inicio p {
+        text-align: center;
+    }
+
+    .hero-cta {
+        text-align: center;
+    }
+
+    /* Top Juegos Section */
+    .padre-box {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 15px;
+        padding: 20px;
+        height: auto;
+    }
+
+    .caja1, .caja2, .caja3, .caja4, .caja6, .caja7, .caja9, .caja10 {
+        grid-area: auto;
+        height: 200px;
+    }
+
+    .caja4 {
+        width: 150px;
+        height: 150px;
+    }
+
+    #logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* Reseñas Section */
+    .reselas {
+        padding: 20px 0;
+    }
+
+    .reselas h2 {
+        font-size: 2.5rem !important;
+    }
+
+    .carousel-inner {
+        margin: 0 20px;
+    }
+
+    .carousel-item {
+        padding: 0 5px;
+    }
+
+    .tarjeta-reseña {
+        width: 100%;
+        height: 400px;
+    }
+
+    .tarjeta-reseña figure {
+        height: 35%;
+    }
+
+    .tarjeta-reseña p {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+
+    /* DOOM Section */
+    .productoras {
+        padding: 20px;
+        padding-top: 100px;
+    }
+
+    .texto-Doom-inicial h1 {
+        font-size: 2em;
+    }
+
+    .texto-Doom-inicial p {
+        font-size: 1.1em;
+    }
+
+    .doom-wrapper {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 10px;
+    }
+
+    .form-container,
+    .doom-container {
+        width: 100%;
+    }
+
+    .info-card {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .social-media {
+        flex-direction: row;
+        justify-content: center;
+        margin-left: 0;
+    }
+
+    .footer-logo img {
+        margin-left: 0;
+    }
+
+    .footer-links ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+/* Ajustes adicionales para pantallas muy pequeñas */
+@media (max-width: 400px) {
+    .texto-caja-inicio h1 {
+        font-size: 2rem !important;
+    }
+
+    .tarjeta-reseña {
+        height: 350px;
+    }
+
+    .tarjeta-reseña figure {
+        height: 30%;
+    }
+
+    .tarjeta-reseña p {
+        font-size: 0.75rem;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 30px;
+        height: 30px;
+    }
+
+    .carousel-control-prev {
+        left: 0;
+    }
+
+    .carousel-control-next {
+        right: 0;
+    }
+}
+
+/* Estilos del menú hamburguesa */
+.menu-hamburguesa {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.menu-hamburguesa span {
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.menu-desplegable {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(13, 13, 13, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding-top: 80px;
+}
+
+.menu-desplegable.active {
+    display: block;
+}
+
+.menu-desplegable .redirecciones {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.menu-desplegable .redirecciones a {
+    font-size: 1.2rem;
+}
+
+/* Media Queries para Responsive Design */
+@media (max-width: 600px) {
+    .menu-hamburguesa {
+        display: flex;
+    }
+
+    .menu-desplegable {
+        display: none;
+    }
+
+    .menu-desplegable.active {
+        display: block;
+    }
+
+    .contenedor-header {
+        justify-content: space-between;
+    }
+
+    .redirecciones {
+        display: none;
+    }
+
+    .botones {
+        display: none;
+    }
+
+    /* Animación del menú hamburguesa */
+    .menu-hamburguesa.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .menu-hamburguesa.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-hamburguesa.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+}
+
+/* Estilos para versión de escritorio */
+@media (min-width: 601px) {
+    .menu-hamburguesa {
+        display: none;
+    }
+
+    .menu-desplegable {
+        display: none !important;
+    }
+
+    .redirecciones {
+        display: flex !important;
+        align-items: center;
+        list-style: none;
+        gap: 20px;
+    }
+
+    .botones {
+        display: flex !important;
+        gap: 10px;
+    }
+
+    .contenedor-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .logo {
+        margin-right: 0;
+    }
+
+    .logo img {
+        height: 50px;
+    }
 }
 
 
