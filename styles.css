@@ -34,6 +34,7 @@ body {
     "header       header       header"   
     "hero         hero         hero"        
     "top-juegos   top-juegos   top-juegos"
+    "cta-action   cta-action   cta-action"
     "reselas      reselas      reselas"  
     "productoras  productoras  productoras" 
     "contacto     contacto     contacto"
@@ -669,7 +670,15 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
 }
-
+.cta-section{
+    grid-area: cta-action;
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
 /*fin top juegos*/
 
 /* ===========================================
@@ -1320,10 +1329,12 @@ input, select, button {
 
     .texto-Doom-inicial h1 {
         font-size: 2em;
+        text-align: center;
     }
 
     .texto-Doom-inicial p {
         font-size: 1.1em;
+        text-align: center;
     }
 
     .doom-wrapper {
@@ -2338,6 +2349,94 @@ footer .social-media img {
     #logo {
         width: 60px;
         height: 60px;
+    }
+}
+
+/* Estilos para la sección CTA */
+.cta-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.1), rgba(255, 192, 203, 0.1));
+    border-radius: 20px;
+    margin: 40px 0;
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    color: #ddd;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-btn {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-btn:first-child {
+    background: linear-gradient(135deg, #ff0000, #ffc0cb);
+    color: white;
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+}
+
+.cta-btn.secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid #ff0000;
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4);
+}
+
+.cta-btn.secondary:hover {
+    background: rgba(255, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .cta-section {
+        padding: 40px 15px;
+    }
+
+    .cta-section h2 {
+        font-size: 2rem;
+    }
+
+    .cta-section p {
+        font-size: 1rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-btn {
+        width: 100%;
+        max-width: 300px;
     }
 }
 

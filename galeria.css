@@ -328,68 +328,46 @@ footer {
 
     .galeria-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-areas: 
-            "juego1 juego2"
-            "juego3 juego4"
-            "juego5 juego6"
-            "juego7 juego8"
-            "juego9 juego10"
-            "juego11 juego12";
-        gap: 8px;
-        padding: 8px;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 30px;
+        padding: 20px;
         width: 100%;
-        max-width: 400px;
+        max-width: none;
         justify-items: center;
         margin-bottom: 0;
     }
 
     .tarjeta-juego {
         margin: 0;
-        border-radius: 8px;
-        border-width: 1px;
+        border-radius: 15px;
+        border-width: 2px;
         width: 100%;
-        max-width: 160px;
+        max-width: 300px;
         justify-self: center;
         align-self: center;
     }
 
-    .tarjeta-juego:nth-child(1) { grid-area: juego1; }
-    .tarjeta-juego:nth-child(2) { grid-area: juego2; }
-    .tarjeta-juego:nth-child(3) { grid-area: juego3; }
-    .tarjeta-juego:nth-child(4) { grid-area: juego4; }
-    .tarjeta-juego:nth-child(5) { grid-area: juego5; }
-    .tarjeta-juego:nth-child(6) { grid-area: juego6; }
-    .tarjeta-juego:nth-child(7) { grid-area: juego7; }
-    .tarjeta-juego:nth-child(8) { grid-area: juego8; }
-    .tarjeta-juego:nth-child(9) { grid-area: juego9; }
-    .tarjeta-juego:nth-child(10) { grid-area: juego10; }
-    .tarjeta-juego:nth-child(11) { grid-area: juego11; }
-    .tarjeta-juego:nth-child(12) { grid-area: juego12; }
-
     .tarjeta-juego img {
-        height: 100px;
+        height: 200px;
     }
 
     .info-juego {
-        padding: 6px;
+        padding: 15px;
     }
 
     .info-juego h3 {
-        font-size: 0.8rem;
-        margin-bottom: 2px;
+        font-size: 1.2rem;
+        margin-bottom: 5px;
     }
 
     .info-juego p {
-        font-size: 0.65rem;
-        margin-bottom: 4px;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+        display: block;
     }
 
     .rating {
-        font-size: 0.7rem;
+        font-size: 1.2rem;
     }
 
     /* Estilos para la navegación móvil */
