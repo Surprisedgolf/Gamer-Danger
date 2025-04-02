@@ -1,3 +1,6 @@
+/* ===========================================
+   RESET Y VARIABLES GLOBALES
+   =========================================== */
 * {
     margin: 0;
     padding: 0;
@@ -10,13 +13,19 @@
     --color-texto: white;
 }
 
-
+/* ===========================================
+   ESTILOS GENERALES DEL BODY
+   =========================================== */
 body {
     background-color: var(--color-primario);
     color: var(--color-texto);
     font-family: "Rubik", sans-serif;
+    overflow-x: hidden;
 }
 
+/* ===========================================
+   CONTENEDOR PRINCIPAL Y GRID LAYOUT
+   =========================================== */
 .contenedor-principal {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -36,9 +45,9 @@ body {
     background-color: var(--color-texto);
 }
 
-
-/*Header*/
-
+/* ===========================================
+   HEADER Y NAVEGACIÓN
+   =========================================== */
 header {
     position: absolute;
     top: 20px;
@@ -72,8 +81,9 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
+    position: relative;
 }
 
 .redirecciones {
@@ -94,15 +104,20 @@ header {
     color: #D9D9D9;
 }
 
-.logo img {
-    height: 50px;
-    margin-right: 80px;
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
 }
 
+.logo img {
+    height: 50px;
+    margin-right: 0;
+}
 
-.botones {
-    display: flex;
-    gap: 10px;
+.botones-desktop {
+    margin-left: auto;
 }
 
 .boton {
@@ -120,9 +135,9 @@ header {
     color: black;
 }
 
-
-/* seccion inicial (hero) */
-
+/* ===========================================
+   SECCIÓN HERO/INICIO
+   =========================================== */
 .seccion-inicio {
     grid-area: hero;
     background: 
@@ -149,8 +164,6 @@ header {
     height: auto;
    
 }
-
-
 
 .texto-caja-inicio h1 {
     font-size: 4rem !important;
@@ -224,7 +237,6 @@ header {
     background: #0D0D0D;
 }
 
-
 .empresas-logos {
     display: flex;
     margin: 0 10px;
@@ -232,7 +244,6 @@ header {
     flex-wrap: nowrap;
     width: fit-content;  
 }
-
 
 .empresas-logos img {
     height: 30px;
@@ -242,7 +253,6 @@ header {
     margin: 0 15px;
 }
 
-
 .deslizador-padre:hover .empresas-logos {
     animation-play-state: paused;
 }
@@ -251,7 +261,6 @@ header {
     opacity: 1;
     filter: grayscale(50%);
 }
-
 
 @keyframes slide {
     0% {
@@ -272,9 +281,6 @@ header {
     }
 }
 
-
-
-
 @keyframes slide {
     from {
         transform: translateX(0);
@@ -286,10 +292,9 @@ header {
     
 }
 
-
-
-
-/* Sección top juegos */
+/* ===========================================
+   SECCIÓN TOP JUEGOS
+   =========================================== */
 .padre-box {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -357,8 +362,6 @@ header {
     transition: opacity 0.3s ease;
     text-align: center;
 }
-
-
 
 .caja3 { 
     grid-area: 1 / 4 / 3 / 5; 
@@ -430,7 +433,6 @@ header {
 .caja4:hover { background: #00A4EF; }
 .caja4:hover img { content: url('imagenes/xbox.png'); }
 
-
 .caja6 {
     grid-area: 3 / 1 / 5 / 2;
     background-image: url(imagenes/doom1.webp);
@@ -473,8 +475,6 @@ header {
     box-shadow:#000;
 }
 
-
-
 .caja9 { 
     grid-area: 3 / 2 / 5 / 3;
     background-image: url(imagenes/caja-izquierda.png);
@@ -499,13 +499,11 @@ header {
     background-size: cover;
 }
 
-
 /*fin top juegos*/
 
-
-
-/* reseñas */
-
+/* ===========================================
+   SECCIÓN RESEÑAS
+   =========================================== */
 .reselas {
     grid-area: reselas;
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 20%), linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 20%), 
@@ -530,7 +528,6 @@ header {
     font-size: 4rem !important;
 }
 
-
 .tarjeta-reseña {
     display: flex;
     flex-direction: column;
@@ -542,7 +539,7 @@ header {
     text-align: center;
     transition: transform 0.3s ease, z-index 0.3s ease;
     overflow: hidden;
-    width: 90%;
+    width: 80%;
     margin: 10px auto;
     height: 450px;
     z-index: 0; 
@@ -680,8 +677,9 @@ header {
     }
     
     .tarjeta-reseña {
-        width: 100%;
-        margin: 10px 0;
+        width: 90%;
+        height: 400px;
+        margin: 0 auto;
     }
 }
 
@@ -693,26 +691,20 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-
 .btn-primary:hover {
     background-color: #d03c51;
     border-color: #d03c51;
 }
-
 
 .btn-primary:focus, .btn-secondary:active {
     background-color: #d03c51;  
     border-color: #d03c51;  
 }
 
-
 .btn-primary:active {
     background-color: #d03c51;
     border-color: #d03c51;
 }
-
-
-
 
 .carousel-control-prev-icon, .carousel-control-next-icon {
     background-color: rgba(0, 0, 0, 0.2);
@@ -721,18 +713,14 @@ header {
     height: 40px;
 }
 
-
 .carousel-control-prev-icon:hover, .carousel-control-next-icon:hover {
     background-color: var(--color-primario);
     border-radius: 50%;
 }
 
-
-/*reseñas*/
-
-/* Sección DOOM */
-
-/*caja general*/
+/* ===========================================
+   SECCIÓN DOOM
+   =========================================== */
 .productoras {
     grid-area: productoras;
     width: 100%;
@@ -758,7 +746,6 @@ header {
     transition: background 0.5s ease-in-out;
 }
 
-
 .productoras::before {
     content: "";
     position: absolute;
@@ -783,7 +770,6 @@ header {
     border-radius: 10px 10px 0 0;
 }
 
-
 /*imagen inicio*/
 .imagen-fondo-inicio {
     
@@ -796,7 +782,6 @@ header {
     text-align: center;
     position: relative;
 }
-
 
 .texto-Doom-inicial {
     width: 100%;
@@ -820,7 +805,6 @@ header {
 }
 
 /*contenedor principal seccion juego y formulario*/
-
 .doom-wrapper {
     display: flex;
     align-items: center;
@@ -874,7 +858,6 @@ input, select, button {
 }
 
 /*caja juego*/
-
 .doom-container {
     width: 55%;
     display: flex;
@@ -948,7 +931,6 @@ input, select, button {
     border-radius: 10px;
 }
 
-
 @media (max-width: 600px) {
     .doom-wrapper {
         flex-direction: column;
@@ -959,85 +941,7 @@ input, select, button {
     .doom-container {
         width: 100%;
     }
-}
 
-
-/*footer*/
-
-
-footer {
-    grid-area: footer;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)) 0%,
-    var(--color-primario);
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    padding: 20px;
-    justify-content: space-evenly;
-     
-}
-
-
-.footer-content {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-}
-
-
-footer .social-media {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-footer .social-media img {
-    width: 40px;
-}
-
-
-.footer-logo img {
-    width: 80px;
-    margin-bottom: 20px;
-    margin-left: 20px;
-}
-
-
-.social-media {
-    align-items: center; 
-    margin-left: 20px; 
-}
-
-.footer-links {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-}
-
-
-.footer-links ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.footer-links a {
-    text-decoration: none;
-    color: white;
-}
-
-
-.footer-text {
-    text-align: center;
-    padding: 5px;
-    width: 100%;
-}
-
-/* Media Queries para Responsive Design */
-@media (max-width: 600px) {
     /* Header */
     header {
         width: 95%;
@@ -1052,7 +956,8 @@ footer .social-media img {
     }
 
     .logo {
-        margin-right: 0;
+        position: static;
+        transform: none;
     }
 
     .logo img {
@@ -1060,28 +965,68 @@ footer .social-media img {
     }
 
     .menu-hamburguesa {
-        display: flex;
+        display: block;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 10px;
+    }
+
+    .menu-hamburguesa span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px 0;
+        transition: all 0.3s ease;
     }
 
     .menu-desplegable {
         display: none;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: rgba(13, 13, 13, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
     }
 
     .menu-desplegable.active {
         display: block;
     }
 
-    .redirecciones {
-        display: none;
+    .menu-desplegable .botones {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 20px;
     }
 
-    .botones {
+    .menu-desplegable .boton {
+        width: 80%;
+        max-width: 200px;
+        text-align: center;
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .redirecciones {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .botones-desktop {
         display: none;
     }
 
     /* Animación del menú hamburguesa */
     .menu-hamburguesa.active span:nth-child(1) {
-        transform: translateY(9px) rotate(45deg);
+        transform: translateY(8px) rotate(45deg);
     }
 
     .menu-hamburguesa.active span:nth-child(2) {
@@ -1089,7 +1034,7 @@ footer .social-media img {
     }
 
     .menu-hamburguesa.active span:nth-child(3) {
-        transform: translateY(-9px) rotate(-45deg);
+        transform: translateY(-8px) rotate(-45deg);
     }
 
     /* Hero Section */
@@ -1153,9 +1098,23 @@ footer .social-media img {
         padding: 0 5px;
     }
 
-    .tarjeta-reseña {
+    .carousel-item .row {
+        display: flex;
+        flex-direction: row;
+        margin: 0;
         width: 100%;
-        height: 400px;
+    }
+
+    .carousel-item .col-12 {
+        width: 100%;
+        padding: 0;
+        flex: 0 0 100%;
+    }
+
+    .tarjeta-reseña {
+        width: 75%;
+        height: 350px;
+        margin: 0 auto;
     }
 
     .tarjeta-reseña figure {
@@ -1164,7 +1123,13 @@ footer .social-media img {
 
     .tarjeta-reseña p {
         font-size: 0.8rem;
-        padding: 10px;
+        padding: 8px;
+    }
+
+    .tarjeta-reseña button {
+        padding: 8px 12px;
+        font-size: 12px;
+        margin-bottom: 10px;
     }
 
     /* DOOM Section */
@@ -1187,14 +1152,135 @@ footer .social-media img {
         padding: 20px 10px;
     }
 
-    .form-container,
     .doom-container {
         width: 100%;
+        position: relative;
     }
 
-    .info-card {
+    /* Botón para mostrar/ocultar formulario */
+    .toggle-form-btn {
+        display: block;
         width: 100%;
-        margin-left: 0;
+        padding: 15px;
+        background: var(--color-secundario);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+    .toggle-form-btn:hover {
+        background: #d03c51;
+    }
+
+    /* Contenedor del formulario en móvil */
+    .form-container {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(13, 13, 13, 0.95);
+        padding: 20px;
+        border-radius: 15px 15px 0 0;
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+
+    .form-container.active {
+        display: block;
+        animation: slideUp 0.3s ease-out;
+    }
+
+    @keyframes slideUp {
+        from {
+            transform: translateY(100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+
+    .form-container h2 {
+        color: #e94560;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .form-container p {
+        color: white;
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 0.9rem;
+    }
+
+    .form-container form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .form-container label {
+        color: white;
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+    }
+
+    .form-container input,
+    .form-container select {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+    }
+
+    .form-container input:focus,
+    .form-container select:focus {
+        outline: none;
+        border-color: var(--color-secundario);
+    }
+
+    .form-container .boton-envio-formulario {
+        background: var(--color-secundario);
+        color: white;
+        font-weight: bold;
+        margin-top: 10px;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .form-container .boton-envio-formulario:hover {
+        background: #d03c51;
+    }
+
+    /* Overlay para cerrar el formulario */
+    .form-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+
+    .form-overlay.active {
+        display: block;
     }
 
     /* Footer */
@@ -1220,126 +1306,85 @@ footer .social-media img {
         justify-content: center;
         gap: 10px;
     }
-}
 
-/* Ajustes adicionales para pantallas muy pequeñas */
-@media (max-width: 400px) {
-    .texto-caja-inicio h1 {
-        font-size: 2rem !important;
-    }
-
-    .tarjeta-reseña {
-        height: 350px;
-    }
-
-    .tarjeta-reseña figure {
-        height: 30%;
-    }
-
-    .tarjeta-reseña p {
-        font-size: 0.75rem;
-    }
-
-    .carousel-control-prev,
-    .carousel-control-next {
-        width: 30px;
-        height: 30px;
-    }
-
-    .carousel-control-prev {
-        left: 0;
-    }
-
-    .carousel-control-next {
-        right: 0;
-    }
-}
-
-/* Estilos del menú hamburguesa */
-.menu-hamburguesa {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 20px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 1001;
-}
-
-.menu-hamburguesa span {
-    width: 100%;
-    height: 2px;
-    background-color: white;
-    transition: all 0.3s ease;
-}
-
-.menu-desplegable {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(13, 13, 13, 0.95);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    padding-top: 80px;
-}
-
-.menu-desplegable.active {
-    display: block;
-}
-
-.menu-desplegable .redirecciones {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-}
-
-.menu-desplegable .redirecciones a {
-    font-size: 1.2rem;
-}
-
-/* Media Queries para Responsive Design */
-@media (max-width: 600px) {
-    .menu-hamburguesa {
+    .contenedores-botones-doom {
         display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin: 20px 0;
+        width: 100%;
     }
 
-    .menu-desplegable {
+    .botones-guia-doom {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .info-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+        background: var(--color-secundario);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .info-btn:hover {
+        background: #d03c51;
+    }
+
+    .info-card {
         display: none;
+        background: rgba(13, 13, 13, 0.95);
+        padding: 15px;
+        border-radius: 10px;
+        margin: 10px 0;
+        color: white;
     }
 
-    .menu-desplegable.active {
+    .info-card.active {
         display: block;
+        animation: slideDown 0.3s ease-out;
     }
 
-    .contenedor-header {
-        justify-content: space-between;
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
-    .redirecciones {
-        display: none;
+    .info-card h3 {
+        color: var(--color-secundario);
+        margin-bottom: 10px;
+        font-size: 1.2rem;
     }
 
-    .botones {
-        display: none;
+    .info-card p, .info-card li {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        margin-bottom: 8px;
     }
 
-    /* Animación del menú hamburguesa */
-    .menu-hamburguesa.active span:nth-child(1) {
-        transform: translateY(9px) rotate(45deg);
+    .info-card a {
+        color: var(--color-secundario);
+        text-decoration: none;
     }
 
-    .menu-hamburguesa.active span:nth-child(2) {
-        opacity: 0;
+    .info-card a:hover {
+        text-decoration: underline;
     }
 
-    .menu-hamburguesa.active span:nth-child(3) {
-        transform: translateY(-9px) rotate(-45deg);
+    .toggle-form-btn {
+        margin-top: 10px;
     }
 }
 
@@ -1360,7 +1405,7 @@ footer .social-media img {
         gap: 20px;
     }
 
-    .botones {
+    .botones-desktop {
         display: flex !important;
         gap: 10px;
     }
@@ -1378,6 +1423,653 @@ footer .social-media img {
 
     .logo img {
         height: 50px;
+    }
+
+    /* Ocultar botón de formulario en escritorio */
+    .toggle-form-btn {
+        display: none;
+    }
+
+    /* Ajustes para el carrusel en escritorio */
+    .carousel-item .row {
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        width: 100%;
+    }
+
+    .carousel-item .col-md-4 {
+        width: 33.333%;
+        padding: 0 10px;
+        flex: 0 0 33.333%;
+    }
+
+    .tarjeta-reseña {
+        width: 75%;
+        height: 450px;
+        margin: 0 auto;
+    }
+}
+
+/* Estilos para los botones de navegación en escritorio */
+.nav-buttons-desktop {
+    display: flex;
+    gap: 10px;
+    margin-right: auto;
+    margin-left: 10px;
+    padding-right: 20px;
+}
+
+.nav-btn {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 6px 12px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.nav-btn:hover {
+    color: var(--color-secundario);
+    border-color: var(--color-secundario);
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+    .nav-buttons-desktop {
+        display: none;
+    }
+}
+
+/* ===========================================
+   FOOTER
+   =========================================== */
+footer {
+    grid-area: footer;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)) 0%,
+    var(--color-primario);
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    padding: 20px;
+    justify-content: space-evenly;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+footer .social-media {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+footer .social-media img {
+    width: 40px;
+}
+
+.footer-logo img {
+    width: 80px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.social-media {
+    align-items: center; 
+    margin-left: 20px; 
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.footer-links ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer-text {
+    text-align: center;
+    padding: 5px;
+    width: 100%;
+}
+
+/* ===========================================
+   ANIMACIONES
+   =========================================== */
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* ===========================================
+   MEDIA QUERIES - RESPONSIVE DESIGN
+   =========================================== */
+/* Estilos para versión de escritorio (min-width: 601px) */
+@media (min-width: 601px) {
+    /* Header */
+    .menu-hamburguesa {
+        display: none;
+    }
+
+    .menu-desplegable {
+        display: none !important;
+    }
+
+    .redirecciones {
+        display: flex !important;
+        align-items: center;
+        list-style: none;
+        gap: 20px;
+    }
+
+    .botones-desktop {
+        display: flex !important;
+        gap: 10px;
+    }
+
+    .contenedor-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .logo {
+        margin-right: 0;
+    }
+
+    .logo img {
+        height: 50px;
+    }
+
+    /* Ocultar botón de formulario en escritorio */
+    .toggle-form-btn {
+        display: none;
+    }
+
+    /* Carrusel en escritorio */
+    .carousel-item .row {
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        width: 100%;
+    }
+
+    .carousel-item .col-md-4 {
+        width: 33.333%;
+        padding: 0 10px;
+        flex: 0 0 33.333%;
+    }
+
+    .tarjeta-reseña {
+        width: 75%;
+        height: 450px;
+        margin: 0 auto;
+    }
+
+    /* Navegación en escritorio */
+    .nav-buttons-desktop {
+        display: flex;
+        gap: 10px;
+        margin-right: auto;
+        margin-left: 10px;
+        padding-right: 20px;
+    }
+}
+
+/* Estilos para versión móvil (max-width: 600px) */
+@media (max-width: 600px) {
+    /* Header */
+    header {
+        width: 95%;
+        overflow: hidden;
+        
+    }
+
+    .contenedor-header {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        position: static;
+        transform: none;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .menu-hamburguesa {
+        display: block;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 10px;
+    }
+
+    .menu-hamburguesa span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px 0;
+        transition: all 0.3s ease;
+    }
+
+    .menu-desplegable {
+        display: none;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: rgba(13, 13, 13, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+    }
+
+    .menu-desplegable.active {
+        display: block;
+    }
+
+    .menu-desplegable .botones {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .menu-desplegable .boton {
+        width: 80%;
+        max-width: 200px;
+        text-align: center;
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .redirecciones {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .botones-desktop {
+        display: none;
+    }
+
+    /* Animación del menú hamburguesa */
+    .menu-hamburguesa.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-hamburguesa.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-hamburguesa.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Hero Section */
+    .seccion-inicio {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        padding-top: 150px;
+    }
+
+    .texto-caja-inicio h1 {
+        font-size: 2.5rem !important;
+        text-align: center;
+    }
+
+    .texto-caja-inicio p {
+        text-align: center;
+    }
+
+    .hero-cta {
+        text-align: center;
+    }
+
+    /* Top Juegos Section */
+    .padre-box {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 15px;
+        padding: 20px;
+        height: auto;
+    }
+
+    .caja1, .caja2, .caja3, .caja4, .caja6, .caja7, .caja9, .caja10 {
+        grid-area: auto;
+        height: 200px;
+    }
+
+    .caja4 {
+        width: 150px;
+        height: 150px;
+    }
+
+    #logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* Reseñas Section */
+    .reselas {
+        padding: 20px 0;
+    }
+
+    .reselas h2 {
+        font-size: 2.5rem !important;
+    }
+
+    .carousel-inner {
+        margin: 0 20px;
+    }
+
+    .carousel-item {
+        padding: 0 5px;
+    }
+
+    .carousel-item .row {
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        width: 100%;
+    }
+
+    .carousel-item .col-12 {
+        width: 100%;
+        padding: 0;
+        flex: 0 0 100%;
+    }
+
+    .tarjeta-reseña {
+        width: 75%;
+        height: 350px;
+        margin: 0 auto;
+    }
+
+    .tarjeta-reseña figure {
+        height: 35%;
+    }
+
+    .tarjeta-reseña p {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    .tarjeta-reseña button {
+        padding: 8px 12px;
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    /* DOOM Section */
+    .productoras {
+        padding: 20px;
+        padding-top: 100px;
+    }
+
+    .texto-Doom-inicial h1 {
+        font-size: 2em;
+    }
+
+    .texto-Doom-inicial p {
+        font-size: 1.1em;
+        text-align: center;
+    }
+
+    .doom-wrapper {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 10px;
+    }
+
+    .doom-container {
+        width: 100%;
+        position: relative;
+    }
+
+    /* Botón y formulario en móvil */
+    .toggle-form-btn {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        background: var(--color-secundario);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+    .toggle-form-btn:hover {
+        background: #d03c51;
+    }
+
+    .form-container {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(13, 13, 13, 0.95);
+        padding: 20px;
+        border-radius: 15px 15px 0 0;
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+
+    .form-container.active {
+        display: block;
+        animation: slideUp 0.3s ease-out;
+    }
+
+    .form-container h2 {
+        color: #e94560;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .form-container p {
+        color: white;
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 0.9rem;
+    }
+
+    .form-container form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .form-container label {
+        color: white;
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+    }
+
+    .form-container input,
+    .form-container select {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+    }
+
+    .form-container input:focus,
+    .form-container select:focus {
+        outline: none;
+        border-color: var(--color-secundario);
+    }
+
+    .form-container .boton-envio-formulario {
+        background: var(--color-secundario);
+        color: white;
+        font-weight: bold;
+        margin-top: 10px;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .form-container .boton-envio-formulario:hover {
+        background: #d03c51;
+    }
+
+    .form-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+
+    .form-overlay.active {
+        display: block;
+    }
+
+    /* Botones y tarjetas de información DOOM */
+    .contenedores-botones-doom {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin: 20px 0;
+        width: 100%;
+    }
+
+    .botones-guia-doom {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .info-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+        background: var(--color-secundario);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .info-btn:hover {
+        background: #d03c51;
+    }
+
+    .info-card {
+        display: none;
+        background: rgba(13, 13, 13, 0.95);
+        padding: 15px;
+        border-radius: 10px;
+        margin: 10px 0;
+        color: white;
+    }
+
+    .info-card.active {
+        display: block;
+        animation: slideDown 0.3s ease-out;
+    }
+
+    .info-card h3 {
+        color: var(--color-secundario);
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+    }
+
+    .info-card p, .info-card li {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        margin-bottom: 8px;
+    }
+
+    .info-card a {
+        color: var(--color-secundario);
+        text-decoration: none;
+    }
+
+    .info-card a:hover {
+        text-decoration: underline;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: row;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .social-media {
+        flex-direction: row;
+        justify-content: center;
+        margin-left: 0;
+    }
+
+    .footer-logo img {
+        margin-left: 50px;
+    }
+
+    .footer-links ul {
+        flex-direction: column;
+        align-items: end;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    .footer-text {
+        margin-top: 20px;
+    }
+}
+
+/* Navegación en móvil */
+@media (max-width: 600px) {
+    .nav-buttons-desktop {
+        display: none;
     }
 }
 
