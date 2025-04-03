@@ -51,6 +51,53 @@ circle.addEventListener("mouseleave", () => {
     interval = setInterval(changePlatform, 5000);
 });
 
+        // Funcionalidad del formulario desplegable
+        const toggleFormBtn = document.querySelector('.toggle-form-btn');
+        const formContainer = document.querySelector('.form-container');
+        const formOverlay = document.querySelector('.form-overlay');
+
+        toggleFormBtn.addEventListener('click', () => {
+            formContainer.classList.add('active');
+            formOverlay.classList.add('active');
+        });
+
+        formOverlay.addEventListener('click', () => {
+            formContainer.classList.remove('active');
+            formOverlay.classList.remove('active');
+        });
+
+        // Cerrar formulario al enviar
+        const form = document.querySelector('.form-container form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            formContainer.classList.remove('active');
+            formOverlay.classList.remove('active');
+            // Aquí puedes agregar la lógica para enviar el formulario
+        });
+
+        // Funcionalidad de los botones de información
+        const btnInstallation = document.getElementById('btn-installation');
+        const btnControls = document.getElementById('btn-controls');
+        const cardInstallation = document.getElementById('card-installation');
+        const cardControls = document.getElementById('card-controls');
+
+        btnInstallation.addEventListener('click', () => {
+            cardInstallation.classList.toggle('active');
+            cardControls.classList.remove('active');
+        });
+
+        btnControls.addEventListener('click', () => {
+            cardControls.classList.toggle('active');
+            cardInstallation.classList.remove('active');
+        });
+
+        // Cerrar tarjetas al hacer clic fuera
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.contenedores-botones-doom')) {
+                cardInstallation.classList.remove('active');
+                cardControls.classList.remove('active');
+            }
+        });
 
 //Seccion de doom 
 document.addEventListener("DOMContentLoaded", async () => {

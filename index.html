@@ -116,9 +116,12 @@
         </section>
 
         <!-- ===========================================
-             SECCIÓN TOP JUEGOS
+             SECCIÓN bento-grid
              =========================================== -->
+
+
         <section class="padre-box">
+            
             <div class="caja1"></div>
         
             <!-- Caja 2 con introducción -->
@@ -159,11 +162,13 @@
         
             <article class="caja9">
                 
-                <img src="imagenes/metal-slug.webp" alt="">
+                <img src="imagenes/metal-slug.gif" alt="">
             </article>
         
             <article class="caja10">
-                <h3>Juego 5</h3>
+
+                <img src="imagenes/cup-enemigo.gif" alt="" width="10px" height="10px">
+
             </article>
 
 
@@ -441,59 +446,11 @@
     </div>
 
     <!-- ===========================================
-         SCRIPTS Y JAVASCRIPT
+         SCRIPTS
          =========================================== -->
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Funcionalidad del formulario desplegable
-        const toggleFormBtn = document.querySelector('.toggle-form-btn');
-        const formContainer = document.querySelector('.form-container');
-        const formOverlay = document.querySelector('.form-overlay');
 
-        toggleFormBtn.addEventListener('click', () => {
-            formContainer.classList.add('active');
-            formOverlay.classList.add('active');
-        });
-
-        formOverlay.addEventListener('click', () => {
-            formContainer.classList.remove('active');
-            formOverlay.classList.remove('active');
-        });
-
-        // Cerrar formulario al enviar
-        const form = document.querySelector('.form-container form');
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            formContainer.classList.remove('active');
-            formOverlay.classList.remove('active');
-            // Aquí puedes agregar la lógica para enviar el formulario
-        });
-
-        // Funcionalidad de los botones de información
-        const btnInstallation = document.getElementById('btn-installation');
-        const btnControls = document.getElementById('btn-controls');
-        const cardInstallation = document.getElementById('card-installation');
-        const cardControls = document.getElementById('card-controls');
-
-        btnInstallation.addEventListener('click', () => {
-            cardInstallation.classList.toggle('active');
-            cardControls.classList.remove('active');
-        });
-
-        btnControls.addEventListener('click', () => {
-            cardControls.classList.toggle('active');
-            cardInstallation.classList.remove('active');
-        });
-
-        // Cerrar tarjetas al hacer clic fuera
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.contenedores-botones-doom')) {
-                cardInstallation.classList.remove('active');
-                cardControls.classList.remove('active');
-            }
-        });
-    </script>
 </body>
 
 </html>

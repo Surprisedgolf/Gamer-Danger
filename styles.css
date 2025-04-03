@@ -401,6 +401,7 @@ header {
     box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.1), inset 10px 0 20px rgba(0, 0, 0, 0.1),inset -10px 0 20px rgba(0, 0, 0, 0.1);
 }
 
+
 .caja1, .caja2, .caja3, .caja4, .caja6, .caja7, .caja9, .caja10 {
     background: #0D0D0D;
     border: 2px solid #ff0000;
@@ -421,46 +422,13 @@ header {
     transform: translateY(-5px);
 }
 
-
-.caja1 {
-    border-color: #ff0000;
-}
-
-.caja2 {
-    border-color: #ff3333;
-}
-
-.caja3 {
-    border-color: #ff6666;
-}
-
-.caja4 {
-    border-color: #ff9999;
-}
-
-.caja6 {
-    border-color: #ffcccc;
-}
-
-.caja7 {
-    border-color: #ff0000;
-}
-
-.caja9 {
-    border-color: #ff3333;
-}
-
-.caja10 {
-    border-color: #ff6666;
-}
-
 .caja1 { 
     grid-area: 1 / 1 / 3 / 2; 
     background-image: url(imagenes/amongus.png);
     object-fit: cover;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center top -150px;
+    background-position: center top -100px;
     color: white;
     display: flex;
     justify-content: center;
@@ -471,7 +439,6 @@ header {
 
 .caja2 { 
     grid-area: 1 / 2 / 3 / 4;
-   /* background-image: url(imagenes/caja-superior-s.png);*/
     object-fit: cover;
     background-repeat: no-repeat;
     background-size: cover;
@@ -521,7 +488,6 @@ header {
     object-fit: cover;
     background-repeat: no-repeat;
     background-size: cover;
-    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -642,7 +608,7 @@ header {
 
 .caja9 { 
     grid-area: 3 / 2 / 5 / 3;
-    background-image: url(imagenes/caja-izquierda.png);
+    background-image: url(imagenes/MetalSlug-fondo.png);
     object-fit: cover;
     background-repeat: no-repeat;
     background-size: cover;
@@ -650,6 +616,14 @@ header {
     justify-content: center;
     align-items: center;
     border-radius: 32px;
+    overflow: hidden;
+}
+
+.caja9 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 70% center;
 }
 
 .caja10 { 
@@ -658,11 +632,18 @@ header {
     justify-content: center;
     align-items: center;
     border-radius: 32px;
-    background-image: url(imagenes/caja-derecha.png);
+    background-image: url(imagenes/fondo-cup.gif);
     object-fit: cover;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.caja10 img {
+    width: 70%;
+    height: 90%;
+    object-position: center 80%;
+}
+
 
 /*fin top juegos*/
 /*seccion call to galeria*/
@@ -1592,74 +1573,8 @@ input, select, button {
         justify-content: center;
         gap: 10px;
     }
-
-    .contenedores-botones-doom {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        margin: 20px 0;
-        width: 100%;
-    }
-
-    .botones-guia-doom {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-    }
-
-    .info-btn {
-        width: 100%;
-        padding: 12px;
-        font-size: 14px;
-        background: var(--color-secundario);
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    .info-btn:hover {
-        background: #d03c51;
-    }
-
-    .info-card {
-        display: none;
-        background: rgba(13, 13, 13, 0.95);
-        padding: 15px;
-        border-radius: 10px;
-        margin: 10px 0;
-        color: white;
-    }
-
-    .info-card.active {
-        display: block;
-        animation: slideDown 0.3s ease-out;
-    }
-
-    .info-card h3 {
-        color: var(--color-secundario);
-        margin-bottom: 10px;
-        font-size: 1.2rem;
-    }
-
-    .info-card p, .info-card li {
-        font-size: 0.9rem;
-        line-height: 1.4;
-        margin-bottom: 8px;
-    }
-
-    .info-card a {
-        color: var(--color-secundario);
-        text-decoration: none;
-    }
-
-    .info-card a:hover {
-        text-decoration: underline;
-    }
-
-    .toggle-form-btn {
-        margin-top: 10px;
+    .footer-text {
+        margin-top: 20px;
     }
 }
 
